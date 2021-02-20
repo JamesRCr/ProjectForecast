@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Typography} from "@material-ui/core";
+import {Box, Typography} from "@material-ui/core";
 
 class API extends Component{
     constructor(props) {
@@ -30,9 +30,6 @@ class API extends Component{
                     const error = (data) || response.statusText;
                     return Promise.reject(error);
                 }
-
-                console.log(data);
-
                 this.setState({call: data})
                 this.setState({isLoading: false})
 
@@ -45,7 +42,6 @@ class API extends Component{
     }
 
     render() {
-        console.log()
         const {isLoading, error} = this.state;
         const {address} = this.props;
         let busyness = this.state.call['busyness'];
@@ -56,13 +52,17 @@ class API extends Component{
                 {error ? <Typography variant='p'>{error.message}</Typography> : null}
                 {!isLoading ? (
                     <div key={address}>
-                        <Typography variant='h4'>Busy?</Typography>
-                        <Typography variant='h5'>{busyness}</Typography>
-                        <Typography variant='h4'>Stay at home orders?</Typography>
-                        <Typography variant='h5'>{status}</Typography>
+                        <Box mx='auto'>
+                            <Typography variant='h4'>Busyness</Typography>
+                            <Typography variant='h5'>{busyness}</Typography>
+                        </Box>
+                        <Box paddingTop={2} mx='auto'>
+                            <Typography variant='h4'>Lockdown Level</Typography>
+                            <Typography variant='h5'>{status}</Typography>
+                        </Box>
                     </div>
                     ) : (
-                        <Typography variant='h4'>Loading...</Typography>
+                        <Typography variant='h4'>One moment please...</Typography>
                     )
                 }
             </React.Fragment>

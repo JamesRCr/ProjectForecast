@@ -15,7 +15,7 @@ function ForecastPage() {
     const [Forecasts, setForecasts] = useState([]);
 
     const addForecast = (name, forecast) => {
-        setForecasts([{ name, forecast }, ...Forecasts]);
+        setForecasts([...Forecasts, { name, forecast }]);
         console.log(Forecasts);
     };
 
