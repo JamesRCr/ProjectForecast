@@ -49,10 +49,10 @@ function ForecastForm({ addForecast }) {
                     </Grid>
                     <Grid item>
                         <FormControl>
-                            <InputLabel>Name</InputLabel>
+                            <InputLabel>Address</InputLabel>
                             <Input
                                 value={name}
-                                placeholder="Name"
+                                placeholder="Address"
                                 onChange={handleNameChange}
                             />
                         </FormControl>
@@ -61,7 +61,7 @@ function ForecastForm({ addForecast }) {
                     <Grid item>
                         <Button
                             onClick={() => {
-                                addForecast(name, <API address={name} city={"Toronto"}/>);
+                                addForecast(name, <API address={name} city={'Toronto'}/>);
                                 setName("");
                             }}>
                             Submit

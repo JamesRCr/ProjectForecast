@@ -6,31 +6,37 @@ class API extends Component{
         super(props);
         this.state = {
             isLoading: true,
-            call: [],
+            call: {},
             error: null
         };
     }
 
     componentDidMount(){
+        const { address, city } = this.props;
         fetch(
-        `https://seb7jc8jyf.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner?address={this.props.address}&city={this.props.city}`,
+        `https://cors-anywhere.herokuapp.com/https://seb7jc8jyf.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner?address=${address}&city=${city}`,
         {
             method: "GET",
             withCredentials: true,
             headers: new Headers({
                 'x-api-key': "unOSTIR3x52fJJXETIJBg5aYwvzQd8hX2tOxhUZ1"
-                })
+                }),
             }
         )
             .then(async response => {
                 const data = await response.json();
 
                 if (!response.ok) {
-                    const error = (data && data.message) || response.statusText;
+                    const error = (data) || response.statusText;
                     return Promise.reject(error);
                 }
 
-                this.setState({ call: data, isLoading: false })
+                console.log(data);
+
+                this.setState({call: data})
+                this.setState({isLoading: false})
+
+
             })
             .catch(error => {
                 this.setState({ errorMessage: error.toString() });
@@ -39,20 +45,24 @@ class API extends Component{
     }
 
     render() {
-        const {isLoading, call, error} = this.state;
-        const {address, city} = this.props;
-        const {busyness, status} = call;
+        console.log()
+        const {isLoading, error} = this.state;
+        const {address} = this.props;
+        let busyness = this.state.call['busyness'];
+        let status = this.state.call['status'];
+
         return(
             <React.Fragment>
-                <Typography variant='h3'>{address}, {city}</Typography>
                 {error ? <Typography variant='p'>{error.message}</Typography> : null}
                 {!isLoading ? (
                     <div key={address}>
-                        <Typography variant='h2'>{busyness}</Typography>
-                        <Typography variant='h2'>{status}</Typography>
+                        <Typography variant='h4'>Busy?</Typography>
+                        <Typography variant='h5'>{busyness}</Typography>
+                        <Typography variant='h4'>Stay at home orders?</Typography>
+                        <Typography variant='h5'>{status}</Typography>
                     </div>
                     ) : (
-                        <Typography variant='h3'>Loading...</Typography>
+                        <Typography variant='h4'>Loading...</Typography>
                     )
                 }
             </React.Fragment>

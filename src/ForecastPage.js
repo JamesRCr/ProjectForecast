@@ -21,10 +21,10 @@ function ForecastPage() {
 
     return (
         <div className={classes.root}>
-            <ForecastForm addForecast={addForecast} />
+            <ForecastForm addForecast={addForecast}/>
 
             {Forecasts.map(({ name, forecast }) => (
-                <Forecast name={name} forecast={forecast} />
+                <Forecast name={name} forecast={forecast} key={name} />
                     ))}
         </div>
     );

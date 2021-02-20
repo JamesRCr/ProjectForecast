@@ -33,12 +33,10 @@ function Forecast(props) {
             <div align={"center"}>
                 <Box className={classes.box}>
                     <div className={classes.title}>
-                        <Typography variant='h6'>{name}</Typography>
+                        <Typography variant='h3'>{name}</Typography>
                     </div>
                     <div className={classes.content}>
-                        <Typography paragraph>
-                            {forecast}
-                        </Typography>
+                        {forecast}
                     </div>
                 </Box>
             </div>
