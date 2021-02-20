@@ -22,14 +22,14 @@ And append some query parameters (address and city) to the end of the access url
 https://seb7jc8jyf.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner?address=PUT YOUR ADDRESS HERE WITHOUT QUOTES&city=ANY RANDOM CITY
 ```
 
-You will need to 
+You will need to also add the following headers to your request:
+```
+headers = {"x-api-key": ENTER API KEY HERE}
+```
 
+If you want the API key, message me on Discord...
 
-
-headers = {"x-api-key": api_key}
-
-
-JSON responses look like this:
+JSON responses from the API will look like this:
 ```
 {
     "busyness": "RESULT",
