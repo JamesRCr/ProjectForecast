@@ -13,3 +13,5 @@ https://cors-anywhere.herokuapp.com/corsdemo
 ```
 and keep the page open. This allows us to bypass CORS-policy until website deployment.
 
+Then simply run the website using npm start. It should open at localhost:3000.
+
