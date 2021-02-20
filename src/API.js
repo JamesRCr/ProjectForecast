@@ -19,7 +19,7 @@ class API extends Component{
             method: "GET",
             withCredentials: true,
             headers: new Headers({
-                'x-api-key': "unOSTIR3x52fJJXETIJBg5aYwvzQd8hX2tOxhUZ1"
+                'x-api-key': "REQUEST API OVER DISCORD"
                 }),
             }
         )
