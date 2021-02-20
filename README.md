@@ -5,9 +5,9 @@ Hack the Case Competition Submission
 Authors:
 Aeliya Asghar, Andrey Valkov, James Crowley, Jenny Wu
 
-**AWS API Documentation:**
+#AWS API Documentation
 
-*Make sure you add any relevant identifier if there are multiple businesses at the same address!
+*Make sure you add the name of the business at the start of the address!
 Eg. put "Canadian Tire 2360 Eglinton Ave W" instead of just "2360 Eglinton Ave W"*
 
 **Look at sample_aws_api_call.py for a inspiration**
