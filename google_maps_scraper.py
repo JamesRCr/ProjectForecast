@@ -23,7 +23,6 @@ def lambda_handler(event, context):
     response_object["statusCode"] = 200
     response_object["headers"] = {}
     response_object["headers"]["Content-Type"] = "application/json"
-    response_object["headers"]["Access-Control-Allow-Origin"] = "*"
     response_object["body"] = json.dumps(response_body)
 
     return response_object
