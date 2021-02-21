@@ -14,12 +14,12 @@ Eg. put "Canadian Tire 2360 Eglinton Ave W" instead of just "2360 Eglinton Ave W
 
 To access the server, send a GET request to:
 ```
-https://seb7jc8jyf.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner
+https://cm0wnwe5qa.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner
 ```
 
 And append some query parameters (address and city) to the end of the access url like so:
 ```
-https://seb7jc8jyf.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner?address=PUT YOUR ADDRESS HERE WITHOUT QUOTES&city=ANY RANDOM CITY
+https://cm0wnwe5qa.execute-api.us-east-1.amazonaws.com/default/Hotspot-Warner?address=PUT YOUR ADDRESS HERE WITHOUT QUOTES&city=ANY RANDOM CITY
 ```
 
 You will need to also add the following headers to your request:
