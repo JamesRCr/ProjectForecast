@@ -29,6 +29,8 @@ headers = {"x-api-key": ENTER API KEY HERE}
 
 If you want the API key, message me on Discord...
 
+NOTE: If you are a Hack the Case reviewer, the API key is already inside the code of the Master repo!
+
 JSON responses from the API will look like this:
 ```
 {
